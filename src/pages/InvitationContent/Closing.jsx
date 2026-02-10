@@ -1,63 +1,64 @@
 import { motion } from "framer-motion";
 
-const fadeUpSlow = {
-  hidden: { opacity: 0, y: 30 },
+const fadeCurtain = {
+  hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.4, ease: "easeOut" },
+    transition: { duration: 1.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 const ClosingSection = () => {
   return (
-    <section className="relative z-10 px-6 py-40">
+    <section className="relative z-10 px-6 mt-12 mb-12">
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-120px" }}
-        className="max-w-3xl mx-auto text-center"
+        className="max-w-2xl mx-auto text-center"
       >
-        {/* ORNAMENT */}
-        <motion.div
-          variants={fadeUpSlow}
-          className="flex items-center justify-center gap-6 mb-14 opacity-60"
+        {/* SMALL OPENING */}
+        <motion.p
+          variants={fadeCurtain}
+          className="text-[11px] tracking-[0.45em] uppercase text-white/40 mb-20"
         >
-          <span className="w-16 h-[1px] bg-[#d6c28f]/60" />
-          <span className="text-[10px] tracking-[0.5em] uppercase text-[#d6c28f]/80">
-            Penutup
-          </span>
-          <span className="w-16 h-[1px] bg-[#d6c28f]/60" />
-        </motion.div>
+          With Love
+        </motion.p>
 
         {/* MESSAGE */}
         <motion.p
-          variants={fadeUpSlow}
-          className="text-sm md:text-base leading-relaxed text-white/70 mb-16"
+          variants={fadeCurtain}
+          className="text-sm md:text-base leading-relaxed text-white/65 mb-24"
         >
-          Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila
-          Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+          Merupakan suatu kebahagiaan dan kehormatan bagi kami
+          <br />
+          apabila Bapak/Ibu/Saudara/i berkenan hadir
+          <br />
+          dan memberikan doa restu.
           <br />
           <br />
-          Atas perhatian dan doa yang tulus, kami mengucapkan terima kasih.
+          Atas segala perhatian dan doa yang tulus,
+          <br />
+          kami mengucapkan terima kasih.
         </motion.p>
 
         {/* NAMES */}
         <motion.h3
-          variants={fadeUpSlow}
-          className="font-serif text-4xl md:text-5xl font-light tracking-tight"
+          variants={fadeCurtain}
+          className="font-serif text-4xl md:text-5xl font-light leading-tight"
         >
-          Ahmad Fauzan
-          <span className="block italic text-[#d6c28f] my-2">&</span>
-          Bunga Citra
+          Fahri
+          <span className="block italic text-[#d6c28f] my-6">&</span>
+          Evi
         </motion.h3>
 
-        {/* FOOT NOTE */}
+        {/* SIGNATURE LINE */}
         <motion.p
-          variants={fadeUpSlow}
-          className="mt-12 text-[10px] tracking-[0.4em] uppercase text-white/50"
+          variants={fadeCurtain}
+          className="mt-24 text-[11px] tracking-[0.4em] uppercase text-white/45"
         >
-          Dengan penuh cinta & doa
+          With gratitude & prayers
         </motion.p>
       </motion.div>
     </section>

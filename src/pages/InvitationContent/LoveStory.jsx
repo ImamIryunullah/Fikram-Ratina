@@ -1,93 +1,100 @@
 import { motion } from "framer-motion";
 
-const container = {
-  hidden: {},
-  show: {
+const fadeItem = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.35,
+      duration: 1.1,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.1, ease: "easeOut" },
-  },
-};
-
-const LoveStorySection = () => {
+export default function LoveStorySection() {
   return (
-    <section className="relative z-10 px-6 py-32">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-120px" }}
-        className="max-w-3xl mx-auto"
-      >
-        {/* TITLE */}
-        <motion.div variants={item} className="text-center mb-28">
-          <p className="text-[10px] tracking-[0.6em] uppercase text-[#d6c28f]/80 mb-4">
-            Love Story
+    <section className="relative px-6 py-28">
+      <div className="max-w-2xl mx-auto">
+        {/* Heading */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeItem}
+          className="text-center mb-20"
+        >
+          <p className="text-[10px] tracking-[0.5em] uppercase text-white/50 mb-4">
+            Our Story
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl font-light">
-            Jejak yang Menjadi Takdir
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">
+            A Journey of Two Souls
           </h2>
         </motion.div>
 
-        {/* STORY ITEM */}
-        <motion.div variants={item} className="relative mb-24">
-          <span className="block font-serif text-7xl md:text-9xl text-white/10 absolute -top-12 -left-2">
-            2019
-          </span>
-          <div className="relative pl-2">
-            <h3 className="text-xl md:text-2xl font-light mb-4">
-              Pertemuan Pertama
+        {/* Timeline */}
+        <div className="space-y-16">
+          {/* Item */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeItem}
+            className="relative pl-10"
+          >
+            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
+              2019
+            </span>
+            <h3 className="font-serif text-xl text-white mb-3">
+              The First Encounter
             </h3>
-            <p className="text-sm md:text-base leading-relaxed text-white/70">
-              Tidak ada yang kebetulan. Dari sebuah pertemuan sederhana,
-              percakapan kecil berubah menjadi ruang nyaman untuk pulang.
+            <p className="text-sm leading-relaxed text-white/65">
+              A simple meeting, an unspoken comfort. What began as a moment
+              slowly became a place to return to.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* STORY ITEM */}
-        <motion.div variants={item} className="relative mb-24">
-          <span className="block font-serif text-7xl md:text-9xl text-white/10 absolute -top-12 -left-2">
-            2021
-          </span>
-          <div className="relative pl-2">
-            <h3 className="text-xl md:text-2xl font-light mb-4">
-              Tumbuh Bersama
+          {/* Item */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeItem}
+            className="relative pl-10"
+          >
+            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
+              2021
+            </span>
+            <h3 className="font-serif text-xl text-white mb-3">
+              Growing Together
             </h3>
-            <p className="text-sm md:text-base leading-relaxed text-white/70">
-              Belajar memahami, saling menguatkan, dan menerima bahwa cinta
-              bukan tentang sempurna, melainkan tentang bertahan.
+            <p className="text-sm leading-relaxed text-white/65">
+              Learning patience, understanding differences, and choosing each
+              other — every single day.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* STORY ITEM */}
-        <motion.div variants={item} className="relative">
-          <span className="block font-serif text-7xl md:text-9xl text-white/10 absolute -top-12 -left-2">
-            2026
-          </span>
-          <div className="relative pl-2">
-            <h3 className="text-xl md:text-2xl font-light mb-4">
-              Ikatan Selamanya
+          {/* Item */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeItem}
+            className="relative pl-10"
+          >
+            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
+              2026
+            </span>
+            <h3 className="font-serif text-xl text-white mb-3">
+              Forever Begins
             </h3>
-            <p className="text-sm md:text-base leading-relaxed text-white/70">
-              Dari banyak doa dan perjalanan panjang, kami memutuskan untuk
-              melangkah bersama, mengikat janji dalam satu ikrar suci.
+            <p className="text-sm leading-relaxed text-white/65">
+              With gratitude and love, we choose to walk forward together —
+              bound by a promise meant to last a lifetime.
             </p>
-          </div>
-        </motion.div>
-      </motion.div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
-};
-
-export default LoveStorySection;
+}

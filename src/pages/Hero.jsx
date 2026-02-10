@@ -14,7 +14,7 @@ export default function Cover({ onOpen }) {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/galeri/bali.jpg')",
+          backgroundImage: "url('/galeri/cov.jpg')",
         }}
       />
 

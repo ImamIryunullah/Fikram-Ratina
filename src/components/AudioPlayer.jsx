@@ -1,113 +1,101 @@
 import React, { useState, useRef, useEffect } from "react";
+import { FaMusic, FaPause } from "react-icons/fa";
 
 const AudioPlayer = () => {
-  // 1. Set default state ke true
   const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const playAudio = () => {
-      if (audioRef.current) {
-        audioRef.current
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-            // Hapus event listener setelah berhasil diputar
-            window.removeEventListener("click", playAudio);
-            window.removeEventListener("scroll", playAudio);
-            window.removeEventListener("touchstart", playAudio);
-          })
-          .catch((err) => {
-            console.log("Autoplay dicegah browser, menunggu interaksi user...");
-          });
-      }
+      audioRef.current
+        ?.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
     };
 
-    // Tambahkan listener untuk memicu audio saat user berinteraksi pertama kali
-    window.addEventListener("click", playAudio);
-    window.addEventListener("scroll", playAudio);
-    window.addEventListener("touchstart", playAudio);
-
-    return () => {
-      window.removeEventListener("click", playAudio);
-      window.removeEventListener("scroll", playAudio);
-      window.removeEventListener("touchstart", playAudio);
-    };
+    window.addEventListener("click", playAudio, { once: true });
+    return () => window.removeEventListener("click", playAudio);
   }, []);
 
   const toggleAudio = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
+    if (isPlaying) audioRef.current.pause();
+    else audioRef.current.play();
     setIsPlaying(!isPlaying);
   };
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex items-center gap-4">
-      {/* AUDIO SOURCE */}
+    <div className="fixed bottom-6 right-6 z-[100]">
       <audio ref={audioRef} src="/sounds/2.mp3" loop preload="auto" />
 
-      {/* TEXT LABEL (Desktop only) */}
-      <div className="hidden md:block overflow-hidden">
-        <p
-          className={`text-[10px] tracking-[0.4em] uppercase transition-all duration-700 ${
-            isPlaying ? "translate-x-0 opacity-40" : "translate-x-10 opacity-0"
-          }`}
-        >
-          Now Playing
-        </p>
-      </div>
-
-      {/* TOGGLE BUTTON */}
       <button
         onClick={toggleAudio}
-        className="relative group w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#d6c28f]/50 transition-all duration-500 shadow-2xl"
+        className="group flex items-center gap-4 px-5 py-3 rounded-full
+        bg-black/40 backdrop-blur-md border border-white/10
+        hover:border-[#d6c28f]/50 transition-all duration-500 shadow-2xl"
       >
-        {/* VISUALIZER BARS */}
+        {/* ICON */}
+        <div className="text-[#d6c28f]">
+          {isPlaying ? <FaMusic /> : <FaPause />}
+        </div>
+
+        {/* SONG TITLE */}
+        <div className="w-28 overflow-hidden hidden md:block">
+          <p
+            className={`text-[11px] tracking-widest uppercase whitespace-nowrap
+            transition-opacity duration-500 ${
+              isPlaying ? "opacity-60" : "opacity-30"
+            } animate-marquee`}
+          >
+            Fakhri & Evi Wedding
+          </p>
+        </div>
+
+        {/* VISUALIZER */}
         <div className="flex items-end gap-[3px] h-4">
-          {[1, 2, 3, 4].map((i) => (
+          {[1, 2, 3].map((i) => (
             <span
               key={i}
-              className={`w-[2px] bg-[#d6c28f] transition-all duration-500 ${
-                isPlaying ? `animate-music-bar bar-${i}` : "h-1 opacity-50"
+              className={`w-[2px] rounded-full bg-[#d6c28f] ${
+                isPlaying ? `animate-bar bar-${i}` : "h-1 opacity-40"
               }`}
             />
           ))}
         </div>
-
-        {/* HOVER GLOW & PULSE */}
-        {isPlaying && (
-          <div className="absolute inset-0 rounded-full bg-[#d6c28f]/10 animate-ping pointer-events-none" />
-        )}
-        <div className="absolute inset-0 rounded-full bg-[#d6c28f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </button>
 
       <style jsx>{`
-        @keyframes music-bar {
+        @keyframes bar {
           0%,
           100% {
             height: 4px;
           }
           50% {
-            height: 16px;
+            height: 14px;
           }
         }
-        .animate-music-bar {
-          animation: music-bar 1s ease-in-out infinite;
+        .animate-bar {
+          animation: bar 1.2s ease-in-out infinite;
         }
         .bar-1 {
-          animation-delay: 0.1s;
+          animation-delay: 0s;
         }
         .bar-2 {
-          animation-delay: 0.3s;
-        }
-        .bar-3 {
           animation-delay: 0.2s;
         }
-        .bar-4 {
+        .bar-3 {
           animation-delay: 0.4s;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-marquee {
+          animation: marquee 10s linear infinite;
         }
       `}</style>
     </div>

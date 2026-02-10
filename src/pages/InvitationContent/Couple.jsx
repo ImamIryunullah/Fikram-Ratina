@@ -1,90 +1,111 @@
 import { motion } from "framer-motion";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: "easeOut" },
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 0.4,
+    },
   },
 };
 
-const CoupleSection = () => {
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.4,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const fadeScale = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+export default function CoupleSection() {
   return (
-    <section className="relative z-10 min-h-screen flex items-center justify-center px-6 py-32">
+    <section className="relative py-12 px-6 overflow-hidden">
       <motion.div
+        className="relative z-10 max-w-7xl mx-auto"
+        variants={container}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        className="max-w-6xl w-full"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-120px" }}
       >
-        {/* SECTION TITLE */}
-        <motion.div variants={fadeUp} className="text-center mb-28">
-          <p className="text-[10px] tracking-[0.6em] uppercase text-[#d6c28f]/80 mb-4">
-            Mempelai
+        {/* Heading */}
+        <motion.div variants={fadeUp} className="mb-32 text-center">
+          <p className="text-[11px] uppercase tracking-[0.6em] text-white/60 mb-6">
+            The Couple
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl font-light tracking-tight">
-            Dua Jiwa, Satu Ikatan
+          <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-white">
+            Fakhri <span className="italic text-stone-300">&</span> Evi
           </h2>
         </motion.div>
 
-        {/* CONTENT */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-          {/* GROOM */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col items-center text-center space-y-8"
-          >
-            <div className="relative w-64 h-80 md:w-72 md:h-[420px] overflow-hidden rounded-t-full border border-white/10">
+        {/* Editorial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+          {/* Left – Groom (Dominant Portrait) */}
+          <motion.div variants={fadeScale} className="md:col-span-7">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src="/galeri/Pria.jpeg"
-                alt="Mempelai Pria"
+                alt="Fakhri"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            <div>
-              <h3 className="font-serif text-3xl md:text-4xl font-light">
-                Ahmad Fauzan
+            <motion.div variants={fadeUp} className="mt-10">
+              <h3 className="font-serif text-3xl md:text-4xl text-white">
+                Fakhri
               </h3>
-              <p className="mt-3 text-sm tracking-[0.3em] uppercase text-white/60">
-                Putra Pertama
+              <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
+                Putra dari
               </p>
-              <p className="mt-2 text-sm text-white/50">
+              <p className="mt-1 text-sm text-white/50">
                 Bapak Fulan & Ibu Fulanah
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* BRIDE */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col items-center text-center space-y-8"
-          >
-            <div className="relative w-64 h-80 md:w-72 md:h-[420px] overflow-hidden rounded-t-full border border-white/10">
-              <img
-                src="/galeri/Wanita.jpg"
-                alt="Mempelai Wanita"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-3xl md:text-4xl font-light">
-                Bunga Citra
-              </h3>
-              <p className="mt-3 text-sm tracking-[0.3em] uppercase text-white/60">
-                Putri Kedua
+          {/* Right – Bride (Refined Portrait) */}
+          <motion.div variants={fadeScale} className="md:col-span-5">
+            <motion.div variants={fadeUp} className="mb-10 max-w-sm">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60 mb-4">
+                The Bride
               </p>
-              <p className="mt-2 text-sm text-white/50">
+              <h3 className="font-serif text-3xl md:text-4xl text-white">
+                Evi
+              </h3>
+              <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
+                Putri dari
+              </p>
+              <p className="mt-1 text-sm text-white/50">
                 Bapak Fulan & Ibu Fulanah
               </p>
+            </motion.div>
+
+            <div className="relative aspect-[2/3] overflow-hidden">
+              <img
+                src="/galeri/Wanita.jpg"
+                alt="Evi"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>
       </motion.div>
     </section>
   );
-};
-
-export default CoupleSection;
+}

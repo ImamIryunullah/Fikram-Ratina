@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import LoadingScreen from "../components/LoadingScreen";
+import { preloadImages } from "../utils/preloadImages";
 import HeroSection from "./Hero";
 import TitleSection from "./InvitationContent/Title";
 import QuoteSection from "./InvitationContent/Quote";
@@ -15,67 +16,89 @@ import AudioPlayer from "../components/AudioPlayer";
 
 const Home = () => {
   const [opened, setOpened] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const images = [
+      "/galeri/taman.jpg",
+      "/galeri/1.jpg",
+      "/galeri/2.webp",
+      "/galeri/3.jpg",
+      "/galeri/4.jpg",
+      "/galeri/5.webp",
+    ];
+
+    preloadImages(images, setProgress).then(() => {
+      setTimeout(() => setLoading(false), 600); // biar elegan
+    });
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = opened ? "auto" : "hidden";
   }, [opened]);
 
   return (
-    <main className="relative min-h-screen text-white overflow-hidden">
-      {/* GLOBAL BACKGROUND */}
-      <motion.div
-        className="fixed inset-0 z-0"
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{
-          opacity: 1,
-          scale: [1, 1.08],
-        }}
-        transition={{
-          opacity: { duration: 1.8, ease: "easeOut" },
-          scale: {
-            duration: 30,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "mirror",
-          },
-        }}
-      >
-        <img
-          src="/galeri/taman.jpg"
-          alt="Prewedding Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
-      </motion.div>
-
-      {/* HERO / COVER */}
+    <>
       <AnimatePresence>
-        {!opened && <HeroSection key="hero" onOpen={() => setOpened(true)} />}
+        {loading && <LoadingScreen progress={progress} />}
       </AnimatePresence>
-
-      {/* CONTENT */}
-      {opened && (
+      <main className="relative min-h-screen text-white overflow-hidden">
+        {/* GLOBAL BACKGROUND */}
         <motion.div
-          className="relative z-10"
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="fixed inset-0 z-0"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{
+            opacity: 1,
+            scale: [1, 1.08],
+          }}
+          transition={{
+            opacity: { duration: 1.8, ease: "easeOut" },
+            scale: {
+              duration: 30,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "mirror",
+            },
+          }}
         >
-          <TitleSection />
-          <QuoteSection />
-          <CoupleSection />
-          <LoveStorySection />
-          <EventSection />
-          <GallerySection />
-          <GiftSection />
-          <RSVPSection />
-          <ClosingSection />
+          <img
+            src="/galeri/taman.jpg"
+            alt="Prewedding Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
         </motion.div>
-      )}
 
-      {opened && <AudioPlayer />}
-    </main>
+        {/* HERO / COVER */}
+        <AnimatePresence>
+          {!opened && <HeroSection key="hero" onOpen={() => setOpened(true)} />}
+        </AnimatePresence>
+
+        {/* CONTENT */}
+        {opened && (
+          <motion.div
+            className="relative z-10"
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <TitleSection />
+            <QuoteSection />
+            <CoupleSection />
+            <LoveStorySection />
+            <EventSection />
+            <GallerySection />
+            <GiftSection />
+            <RSVPSection />
+            <ClosingSection />
+          </motion.div>
+        )}
+
+        {opened && <AudioPlayer />}
+      </main>
+    </>
   );
 };
 

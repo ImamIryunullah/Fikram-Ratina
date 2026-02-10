@@ -1,48 +1,77 @@
 import { motion } from "framer-motion";
 
-const QuoteSection = () => {
+export default function QuoteSection() {
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 32 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.4,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
-    <section className="relative text-white py-32 px-6 overflow-hidden">
-      {/* Ornamental blur */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#d6c28f]/10 rounded-full blur-[160px]" />
-
+    <section className="relative py-12 px-6 overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative z-10 max-w-3xl mx-auto text-center space-y-12"
+        className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Quote */}
-        <blockquote className="font-serif text-3xl md:text-4xl leading-relaxed font-light">
-          “Dan di antara tanda-tanda kebesaran-Nya,
-          <br />
-          Dia menciptakan pasangan agar kamu menemukan
-          <span className="italic text-[#d6c28f]"> ketenangan</span>.”
-        </blockquote>
+        {/* Left – Vertical Accent */}
+        <motion.div variants={fadeUp} className="hidden md:flex justify-center">
+          <div className="h-40 w-px bg-white/20" />
+        </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="origin-center mx-auto w-24 h-[1px] bg-[#d6c28f]/60"
-        />
+        {/* Right – Content */}
+        <div className="space-y-10">
+          {/* Small Heading */}
+          <motion.p
+            variants={fadeUp}
+            className="text-[11px] uppercase tracking-[0.5em] text-white/60"
+          >
+            A Sacred Beginning
+          </motion.p>
 
-        {/* Source */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.6 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="text-[11px] tracking-[0.4em] uppercase"
-        >
-          QS. Ar-Rum : 21
-        </motion.p>
+          {/* Statement */}
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-3xl md:text-4xl leading-relaxed text-white"
+          >
+            Two souls,
+            <br />
+            one journey,
+            <br />
+            <span className="italic text-stone-300">
+              united by love and promise.
+            </span>
+          </motion.h2>
+
+          {/* Divider */}
+          <motion.div variants={fadeUp} className="w-24 h-px bg-white/30" />
+
+          {/* Footnote */}
+          <motion.p
+            variants={fadeUp}
+            className="text-xs tracking-[0.3em] uppercase text-white/50"
+          >
+            With gratitude and joy
+          </motion.p>
+        </div>
       </motion.div>
     </section>
   );
-};
-
-export default QuoteSection;
+}
