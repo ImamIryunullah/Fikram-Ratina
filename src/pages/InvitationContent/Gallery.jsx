@@ -69,7 +69,7 @@ const GallerySection = () => {
             className="relative h-[520px] md:h-[640px] overflow-hidden rounded-[32px]"
           >
             <img
-              src="/galeri/covver.jpeg"
+              src="/galeri/covver.webp"
               className="w-full h-full object-cover"
             />
           </motion.div>

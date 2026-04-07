@@ -61,7 +61,7 @@ const Home = () => {
           }}
         >
           <img
-            src="/galeri/covver.jpeg"
+            src="/galeri/covver.webp"
             alt="Prewedding Background"
             className="w-[100%] h-[100%] object-cover"
           />

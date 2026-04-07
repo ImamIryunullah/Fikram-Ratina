@@ -74,7 +74,7 @@ export default function HeroSection() {
           className="relative mx-auto mb-16 w-[220px] md:w-[280px] aspect-[3/4] overflow-hidden rounded-[2.5rem] border border-white/15"
         >
           <img
-            src="/galeri/covver.jpeg" // ganti dengan foto kamu
+            src="/galeri/covver.webp" // ganti dengan foto kamu
             alt="Prewedding"
             className="w-full h-full object-cover"
           />
