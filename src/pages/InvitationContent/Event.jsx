@@ -99,7 +99,7 @@ export default function EventSection() {
             <MapEmbed src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.2299458569314!2d118.71879177501226!3d-8.450713091589366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db58bcb16477c75%3A0x5fd2f1c7c3af6faf!2sGereja%20Kemah%20Injil%20Ekklesia%20Bima!5e1!3m2!1sen!2sid!4v1775480220655!5m2!1sen!2sid" />
 
             <a
-              href="https://maps.app.goo.gl/"
+              href="https://maps.app.goo.gl/rYFz3snqMtWpVsdFA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-8 text-[10px] tracking-[0.4em] uppercase border-b border-white/40 pb-2 hover:text-[#d6c28f] transition"
