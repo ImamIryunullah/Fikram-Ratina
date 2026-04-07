@@ -62,7 +62,7 @@ export default function CoupleSection() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src="/galeri/afan.webp"
-                alt="Afan"
+                alt="Afann"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -74,7 +74,6 @@ export default function CoupleSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right – Bride (Refined Portrait) */}
           <motion.div variants={fadeScale} className="md:col-span-5">
             <motion.div variants={fadeUp} className="mb-10 max-w-sm">
               <h3 className="font-serif text-3xl md:text-4xl text-white">
