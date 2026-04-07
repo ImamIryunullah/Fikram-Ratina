@@ -56,7 +56,7 @@ const LoadingScreen = ({ progress }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.4, ease: "easeOut" }}
           >
-            F&nbsp;&nbsp;E
+            A&nbsp;&nbsp;M
           </motion.h1>
 
           <p className="mt-2 text-[10px] tracking-[0.35em] uppercase text-white/40">

@@ -25,74 +25,41 @@ export default function LoveStorySection() {
           className="text-center mb-20"
         >
           <p className="text-[10px] tracking-[0.5em] uppercase text-white/50 mb-4">
-            Our Story
+            Their Journey
           </p>
+
           <h2 className="font-serif text-4xl md:text-5xl font-light text-white">
-            A Journey of Two Souls
+            A Lifetime of Love
           </h2>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="space-y-16">
-          {/* Item */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+        {/* Story */}
+        <div className="space-y-10 text-center">
+          <motion.p
             variants={fadeItem}
-            className="relative pl-10"
+            className="text-sm leading-relaxed text-white/65"
           >
-            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
-              2019
-            </span>
-            <h3 className="font-serif text-xl text-white mb-3">
-              The First Encounter
-            </h3>
-            <p className="text-sm leading-relaxed text-white/65">
-              A simple meeting, an unspoken comfort. What began as a moment
-              slowly became a place to return to.
-            </p>
-          </motion.div>
+            What began as two separate paths slowly became one shared journey.
+            Through the seasons of life — in joy, in challenges, and in quiet
+            moments — they continued walking side by side.
+          </motion.p>
 
-          {/* Item */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <motion.p
             variants={fadeItem}
-            className="relative pl-10"
+            className="text-sm leading-relaxed text-white/65"
           >
-            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
-              2021
-            </span>
-            <h3 className="font-serif text-xl text-white mb-3">
-              Growing Together
-            </h3>
-            <p className="text-sm leading-relaxed text-white/65">
-              Learning patience, understanding differences, and choosing each
-              other — every single day.
-            </p>
-          </motion.div>
+            Together they built a life filled with love, patience, faith, and
+            countless memories that shaped the story they share today.
+          </motion.p>
 
-          {/* Item */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <motion.p
             variants={fadeItem}
-            className="relative pl-10"
+            className="text-sm leading-relaxed text-white/65"
           >
-            <span className="absolute left-0 top-1 text-[11px] tracking-widest text-[#d6c28f]">
-              2026
-            </span>
-            <h3 className="font-serif text-xl text-white mb-3">
-              Forever Begins
-            </h3>
-            <p className="text-sm leading-relaxed text-white/65">
-              With gratitude and love, we choose to walk forward together —
-              bound by a promise meant to last a lifetime.
-            </p>
-          </motion.div>
+            This celebration is not only about the years that have passed, but
+            about the beautiful journey that continues — hand in hand, heart
+            with heart.
+          </motion.p>
         </div>
       </div>
     </section>

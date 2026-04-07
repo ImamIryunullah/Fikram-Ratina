@@ -23,7 +23,7 @@ const ClosingSection = () => {
           variants={fadeCurtain}
           className="text-[11px] tracking-[0.45em] uppercase text-white/40 mb-20"
         >
-          With Love
+          With Gratitude
         </motion.p>
 
         {/* MESSAGE */}
@@ -31,16 +31,22 @@ const ClosingSection = () => {
           variants={fadeCurtain}
           className="text-sm md:text-base leading-relaxed text-white/65 mb-24"
         >
-          Merupakan suatu kebahagiaan dan kehormatan bagi kami
+          Dengan penuh rasa syukur atas kasih dan penyertaan Tuhan
           <br />
-          apabila Bapak/Ibu/Saudara/i berkenan hadir
+          dalam perjalanan hidup pernikahan kami,
           <br />
-          dan memberikan doa restu.
+          kami mengundang Bapak/Ibu/Saudara/i
+          <br />
+          untuk turut hadir dalam perayaan
+          <br />
+          50 Tahun Pernikahan kami.
           <br />
           <br />
-          Atas segala perhatian dan doa yang tulus,
+          Kehadiran serta doa yang tulus
           <br />
-          kami mengucapkan terima kasih.
+          akan menjadi sukacita dan berkat
+          <br />
+          bagi kami dan keluarga.
         </motion.p>
 
         {/* NAMES */}
@@ -48,9 +54,9 @@ const ClosingSection = () => {
           variants={fadeCurtain}
           className="font-serif text-4xl md:text-5xl font-light leading-tight"
         >
-          Fahri
+          Drs. Afan Christian
           <span className="block italic text-[#d6c28f] my-6">&</span>
-          Evi
+          Meliana
         </motion.h3>
 
         {/* SIGNATURE LINE */}
@@ -58,7 +64,7 @@ const ClosingSection = () => {
           variants={fadeCurtain}
           className="mt-24 text-[11px] tracking-[0.4em] uppercase text-white/45"
         >
-          With gratitude & prayers
+          Celebrating 50 Years of Love
         </motion.p>
       </motion.div>
     </section>

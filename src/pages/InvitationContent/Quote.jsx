@@ -43,7 +43,7 @@ export default function QuoteSection() {
             variants={fadeUp}
             className="text-[11px] uppercase tracking-[0.5em] text-white/60"
           >
-            A Sacred Beginning
+            A Golden Journey
           </motion.p>
 
           {/* Statement */}
@@ -56,7 +56,7 @@ export default function QuoteSection() {
             one journey,
             <br />
             <span className="italic text-stone-300">
-              united by love and promise.
+              celebrating fifty years of love, faith, and togetherness.
             </span>
           </motion.h2>
 

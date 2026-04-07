@@ -31,9 +31,6 @@ const GallerySection = () => {
           <p className="text-[11px] tracking-[0.6em] uppercase text-[#d6c28f]/80 mb-6">
             Our Moments
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight">
-            Potret <br /> Perjalanan Cinta
-          </h2>
         </motion.div>
 
         {/* EDITORIAL GRID */}
@@ -47,7 +44,10 @@ const GallerySection = () => {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="relative h-[520px] md:h-[640px] overflow-hidden rounded-[32px]"
           >
-            <img src="/galeri/1.jpg" className="w-full h-full object-cover" />
+            <img
+              src="/galeri/image1.webp"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
           {/* IMAGE 2 – center highlight */}
@@ -57,7 +57,7 @@ const GallerySection = () => {
             className="relative h-[420px] md:h-[520px] md:mt-24 overflow-hidden rounded-[32px]"
           >
             <img
-              src="/galeri/bali.jpg"
+              src="/galeri/image2.webp"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -68,25 +68,11 @@ const GallerySection = () => {
             transition={{ duration: 1.2 }}
             className="relative h-[520px] md:h-[640px] overflow-hidden rounded-[32px]"
           >
-            <img src="/galeri/3.jpg" className="w-full h-full object-cover" />
+            <img
+              src="/galeri/covver.jpeg"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
-        </motion.div>
-
-        {/* BOTTOM ROW */}
-        <motion.div
-          variants={fade}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10"
-        >
-          {["/galeri/4.jpg", "/galeri/5.webp"].map((img, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 1.2 }}
-              className="relative h-[420px] overflow-hidden rounded-[32px]"
-            >
-              <img src={img} className="w-full h-full object-cover" />
-            </motion.div>
-          ))}
         </motion.div>
       </motion.div>
     </section>

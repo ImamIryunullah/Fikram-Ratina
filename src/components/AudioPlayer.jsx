@@ -46,7 +46,7 @@ const AudioPlayer = () => {
               isPlaying ? "opacity-60" : "opacity-30"
             } animate-marquee`}
           >
-            Fakhri & Evi Wedding
+            50th Anniversary
           </p>
         </div>
 

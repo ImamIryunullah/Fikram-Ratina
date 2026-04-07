@@ -50,7 +50,8 @@ export default function CoupleSection() {
             The Couple
           </p>
           <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-white">
-            Fakhri <span className="italic text-stone-300">&</span> Evi
+            Drs. Afan Christian <span className="italic text-stone-300">&</span>{" "}
+            Meliana
           </h2>
         </motion.div>
 
@@ -60,46 +61,31 @@ export default function CoupleSection() {
           <motion.div variants={fadeScale} className="md:col-span-7">
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src="/galeri/Pria.jpeg"
-                alt="Fakhri"
+                src="/galeri/afan.webp"
+                alt="Afan"
                 className="w-full h-full object-cover"
               />
             </div>
 
             <motion.div variants={fadeUp} className="mt-10">
               <h3 className="font-serif text-3xl md:text-4xl text-white">
-                Fakhri
+                Drs. Afan Christian
               </h3>
-              <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
-                Putra dari
-              </p>
-              <p className="mt-1 text-sm text-white/50">
-                Bapak Fulan & Ibu Fulanah
-              </p>
             </motion.div>
           </motion.div>
 
           {/* Right – Bride (Refined Portrait) */}
           <motion.div variants={fadeScale} className="md:col-span-5">
             <motion.div variants={fadeUp} className="mb-10 max-w-sm">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/60 mb-4">
-                The Bride
-              </p>
               <h3 className="font-serif text-3xl md:text-4xl text-white">
-                Evi
+                Meliana
               </h3>
-              <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
-                Putri dari
-              </p>
-              <p className="mt-1 text-sm text-white/50">
-                Bapak Fulan & Ibu Fulanah
-              </p>
             </motion.div>
 
             <div className="relative aspect-[2/3] overflow-hidden">
               <img
-                src="/galeri/Wanita.jpg"
-                alt="Evi"
+                src="/galeri/meliana.webp"
+                alt="Meliana"
                 className="w-full h-full object-cover"
               />
             </div>

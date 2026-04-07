@@ -51,7 +51,7 @@ export default function HeroSection() {
           variants={fadeUp}
           className="mb-6 text-[10px] md:text-xs uppercase tracking-[0.6em] text-white/60"
         >
-          Together with their families
+          Celebrating 50 Years of Love and Marriage
         </motion.p>
 
         {/* Monogram */}
@@ -59,7 +59,7 @@ export default function HeroSection() {
           variants={fadeUp}
           className="font-serif text-[72px] md:text-[120px] italic tracking-tight text-white leading-none"
         >
-          F<span className="text-stone-300 mx-2">/</span>E
+          A<span className="text-stone-300 mx-2">/</span>M
         </motion.h1>
 
         {/* Divider */}
@@ -74,7 +74,7 @@ export default function HeroSection() {
           className="relative mx-auto mb-16 w-[220px] md:w-[280px] aspect-[3/4] overflow-hidden rounded-[2.5rem] border border-white/15"
         >
           <img
-            src="/galeri/prew.webp" // ganti dengan foto kamu
+            src="/galeri/covver.jpeg" // ganti dengan foto kamu
             alt="Prewedding"
             className="w-full h-full object-cover"
           />
@@ -88,7 +88,8 @@ export default function HeroSection() {
           variants={fadeUp}
           className="font-serif text-xl md:text-2xl tracking-wide text-white"
         >
-          Fakhri <span className="text-stone-300 mx-2">&</span> Evi
+          Drs. Afan Christian <span className="text-stone-300 mx-2">&</span>{" "}
+          Meliana
         </motion.p>
 
         {/* Date */}
@@ -96,7 +97,7 @@ export default function HeroSection() {
           variants={fadeUp}
           className="mt-6 tracking-[0.35em] text-xs md:text-sm text-white/80"
         >
-          12 OCTOBER 2026
+          2 MEI 2026
         </motion.p>
       </motion.div>
     </section>

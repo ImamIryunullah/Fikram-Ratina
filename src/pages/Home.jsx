@@ -9,8 +9,6 @@ import CoupleSection from "./InvitationContent/Couple";
 import LoveStorySection from "./InvitationContent/LoveStory";
 import EventSection from "./InvitationContent/Event";
 import GallerySection from "./InvitationContent/Gallery";
-import GiftSection from "./InvitationContent/Gift";
-import RSVPSection from "./InvitationContent/RVSP";
 import ClosingSection from "./InvitationContent/Closing";
 import AudioPlayer from "../components/AudioPlayer";
 
@@ -63,9 +61,9 @@ const Home = () => {
           }}
         >
           <img
-            src="/galeri/taman.jpg"
+            src="/galeri/covver.jpeg"
             alt="Prewedding Background"
-            className="w-full h-full object-cover"
+            className="w-[100%] h-[100%] object-cover"
           />
           <div className="absolute inset-0 bg-black/20" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
@@ -90,8 +88,7 @@ const Home = () => {
             <LoveStorySection />
             <EventSection />
             <GallerySection />
-            <GiftSection />
-            <RSVPSection />
+
             <ClosingSection />
           </motion.div>
         )}

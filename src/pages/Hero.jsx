@@ -14,7 +14,7 @@ export default function Cover({ onOpen }) {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/galeri/cov.jpg')",
+          backgroundImage: "url('/galeri/background.webp')",
         }}
       />
 
@@ -29,15 +29,15 @@ export default function Cover({ onOpen }) {
         transition={{ delay: 0.6, duration: 1.2 }}
       >
         <p className="tracking-[0.3em] text-sm mb-6 uppercase">
-          The Wedding Of
+          50th Wedding Anniversary
         </p>
 
         <h1 className="font-serif text-4xl md:text-6xl mb-4">
-          Fakhri <span className="mx-3">&</span> Evi
+          Drs. Afan Christian <span className="mx-3">&</span> Meliana
         </h1>
 
         <p className="text-sm md:text-base tracking-widest mb-10">
-          Minggu, 12 Oktober 2026
+          Sabtu, 2 Mei 2026
         </p>
 
         {/* Button */}
