@@ -5,72 +5,74 @@ export default function QuoteSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.2,
       },
     },
   };
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 32 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.4,
-        ease: [0.16, 1, 0.3, 1],
+        duration: 0.9,
       },
     },
   };
 
   return (
-    <section className="relative py-12 px-6 overflow-hidden">
+    <section className="py-24 px-6">
       <motion.div
-        className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+        className="max-w-3xl mx-auto text-center"
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true }}
       >
-        {/* Left – Vertical Accent */}
-        <motion.div variants={fadeUp} className="hidden md:flex justify-center">
-          <div className="h-40 w-px bg-white/20" />
+        {/* Ornament */}
+        <motion.div
+          variants={fadeUp}
+          className="flex items-center justify-center gap-4 mb-10"
+        >
+          {" "}
+          <div className="h-px w-12 bg-white/20" />{" "}
+          <span className="text-white/60 text-lg">✦</span>{" "}
+          <div className="h-px w-12 bg-white/20" />
         </motion.div>
-
-        {/* Right – Content */}
-        <div className="space-y-10">
-          {/* Small Heading */}
-          <motion.p
-            variants={fadeUp}
-            className="text-[11px] uppercase tracking-[0.5em] text-white/60"
-          >
-            A Golden Journey
-          </motion.p>
-
-          {/* Statement */}
-          <motion.h2
-            variants={fadeUp}
-            className="font-serif text-3xl md:text-4xl leading-relaxed text-white"
-          >
-            Two souls,
-            <br />
-            one journey,
-            <br />
-            <span className="italic text-stone-300">
-              celebrating fifty years of love, faith, and togetherness.
-            </span>
-          </motion.h2>
-
-          {/* Divider */}
-          <motion.div variants={fadeUp} className="w-24 h-px bg-white/30" />
-
-          {/* Footnote */}
-          <motion.p
-            variants={fadeUp}
-            className="text-xs tracking-[0.3em] uppercase text-white/50"
-          >
-            With gratitude and joy
-          </motion.p>
-        </div>
+        ```
+        {/* Heading */}
+        <motion.p
+          variants={fadeUp}
+          className="uppercase tracking-[0.4em] text-xs text-white/60 mb-8"
+        >
+          Firman Allah SWT
+        </motion.p>
+        {/* Arabic */}
+        <motion.h2
+          variants={fadeUp}
+          className="text-2xl md:text-4xl leading-loose text-white mb-8"
+        >
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+          لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+        </motion.h2>
+        {/* Translation */}
+        <motion.p
+          variants={fadeUp}
+          className="text-base md:text-lg leading-8 text-white/80"
+        >
+          "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan
+          pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa
+          tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+          sayang."
+        </motion.p>
+        <motion.p
+          variants={fadeUp}
+          className="mt-6 text-sm tracking-[0.3em] uppercase text-white/50"
+        >
+          QS. Ar-Rum : 21
+        </motion.p>
+        {/* Bottom Ornament */}
       </motion.div>
     </section>
   );

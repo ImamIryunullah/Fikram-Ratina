@@ -1,74 +1,84 @@
 import { motion } from "framer-motion";
 
-const fadeCurtain = {
-  hidden: { opacity: 0, y: 40 },
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.6, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 0.9,
+    },
   },
 };
 
-const ClosingSection = () => {
+export default function ClosingSection() {
   return (
-    <section className="relative z-10 px-6 mt-12 mb-12">
+    <section className="py-24 px-6">
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-120px" }}
+        viewport={{ once: true }}
         className="max-w-2xl mx-auto text-center"
       >
-        {/* SMALL OPENING */}
+        {/* Ornament */}
+        <motion.div
+          variants={fadeUp}
+          className="flex items-center justify-center gap-4 mb-12"
+        >
+          {" "}
+          <div className="h-px w-12 bg-white/20" />{" "}
+          <span className="text-white/60">✦</span>{" "}
+          <div className="h-px w-12 bg-white/20" />
+        </motion.div>
+        ```
+        {/* Heading */}
         <motion.p
-          variants={fadeCurtain}
-          className="text-[11px] tracking-[0.45em] uppercase text-white/40 mb-20"
+          variants={fadeUp}
+          className="uppercase tracking-[0.4em] text-xs text-white/60 mb-8"
         >
-          With Gratitude
+          Terima Kasih
         </motion.p>
-
-        {/* MESSAGE */}
+        {/* Message */}
         <motion.p
-          variants={fadeCurtain}
-          className="text-sm md:text-base leading-relaxed text-white/65 mb-24"
+          variants={fadeUp}
+          className="text-base md:text-lg leading-8 text-white/75"
         >
-          Dengan penuh rasa syukur atas kasih dan penyertaan Tuhan
-          <br />
-          dalam perjalanan hidup pernikahan kami,
-          <br />
-          kami mengundang Bapak/Ibu/Saudara/i
-          <br />
-          untuk turut hadir dalam perayaan
-          <br />
-          50 Tahun Pernikahan kami.
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+          Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu pada
+          hari bahagia kami.
           <br />
           <br />
-          Kehadiran serta doa yang tulus
-          <br />
-          akan menjadi sukacita dan berkat
-          <br />
-          bagi kami dan keluarga.
+          Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
         </motion.p>
+        {/* Salam */}
+        <motion.p variants={fadeUp} className="mt-12 text-white/80 italic">
+          Wassalamu'alaikum Warahmatullahi Wabarakatuh
+        </motion.p>
+        {/* Names */}
+        <motion.div variants={fadeUp} className="mt-16">
+          <h3 className="font-serif text-4xl md:text-5xl text-white">Budi</h3>
 
-        {/* NAMES */}
-        <motion.h3
-          variants={fadeCurtain}
-          className="font-serif text-4xl md:text-5xl font-light leading-tight"
-        >
-          Drs. Afan Christian
-          <span className="block italic text-[#d6c28f] my-6">&</span>
-          Meliana
-        </motion.h3>
+          <p className="my-4 text-xl text-white/60">&</p>
 
-        {/* SIGNATURE LINE */}
+          <h3 className="font-serif text-4xl md:text-5xl text-white">Nabila</h3>
+        </motion.div>
+        {/* Footer */}
         <motion.p
-          variants={fadeCurtain}
-          className="mt-24 text-[11px] tracking-[0.4em] uppercase text-white/45"
+          variants={fadeUp}
+          className="mt-12 text-xs uppercase tracking-[0.3em] text-white/40"
         >
-          Celebrating 50 Years of Love
+          26 Juni 2026 • Sape, Kabupaten Bima
         </motion.p>
+        {/* Bottom Ornament */}
+        <motion.div
+          variants={fadeUp}
+          className="flex items-center justify-center gap-4 mt-12"
+        >
+          <div className="h-px w-12 bg-white/20" />
+          <span className="text-white/60">✦</span>
+          <div className="h-px w-12 bg-white/20" />
+        </motion.div>
       </motion.div>
     </section>
   );
-};
-
-export default ClosingSection;
+}

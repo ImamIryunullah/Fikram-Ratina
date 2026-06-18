@@ -5,99 +5,99 @@ export default function HeroSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.25,
-        delayChildren: 0.6,
+        staggerChildren: 0.2,
+        delayChildren: 0.4,
       },
     },
   };
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 26 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.4,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
-  };
-
-  const photoReveal = {
-    hidden: { opacity: 0, scale: 0.96 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1.6,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 1,
       },
     },
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 py-12">
-      {/* Vertical Line */}
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-white/10" />
-
+    <section className="relative min-h-screen px-6 py-12">
       <motion.div
-        className="relative z-10 min-h-screen flex flex-col justify-center text-center max-w-4xl mx-auto"
+        className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center text-center"
         variants={container}
         initial="hidden"
         animate="visible"
       >
+        {/* Arabic */}
+        <motion.p
+          variants={fadeUp}
+          className="mb-4 text-lg md:text-xl text-white"
+        >
+          بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+        </motion.p>
+        ```
         {/* Subtitle */}
         <motion.p
           variants={fadeUp}
-          className="mb-6 text-[10px] md:text-xs uppercase tracking-[0.6em] text-white/60"
+          className="mb-10 text-[11px] md:text-xs uppercase tracking-[0.45em] text-white/70"
         >
-          Celebrating 50 Years of Love and Marriage
+          Undangan Pernikahan
         </motion.p>
-
-        {/* Monogram */}
-        <motion.h1
-          variants={fadeUp}
-          className="font-serif text-[72px] md:text-[120px] italic tracking-tight text-white leading-none"
-        >
-          A<span className="text-stone-300 mx-2">/</span>M
-        </motion.h1>
-
-        {/* Divider */}
+        {/* Photo */}
         <motion.div
           variants={fadeUp}
-          className="mx-auto my-12 h-px w-24 bg-white/30"
-        />
-
-        {/* PREWEDDING PHOTO */}
-        <motion.div
-          variants={photoReveal}
-          className="relative mx-auto mb-16 w-[220px] md:w-[280px] aspect-[3/4] overflow-hidden rounded-[2.5rem] border border-white/15"
+          className="relative mb-10 w-[240px] md:w-[320px] aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-[32px]"
         >
           <img
-            src="/galeri/covver.webp" // ganti dengan foto kamu
-            alt="Prewedding"
-            className="w-full h-full object-cover"
+            src="/galeri/eb78eea9bf8c8e055c59ca249628bf69.webp"
+            alt="Budi & Nabila"
+            className="h-full w-full object-cover"
           />
-
-          {/* Soft overlay supaya nyatu */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
         </motion.div>
-
         {/* Names */}
-        <motion.p
-          variants={fadeUp}
-          className="font-serif text-xl md:text-2xl tracking-wide text-white"
-        >
-          Drs. Afan Christian <span className="text-stone-300 mx-2">&</span>{" "}
-          Meliana
-        </motion.p>
+        <motion.div variants={fadeUp}>
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-none">
+            Budi
+          </h1>
 
+          <div className="my-3 text-2xl md:text-3xl text-white/80">&</div>
+
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-none">
+            Nabila
+          </h1>
+        </motion.div>
+        {/* Divider */}
+        <motion.div variants={fadeUp} className="my-8 flex items-center gap-4">
+          <div className="h-px w-12 bg-white/30" />
+          <span className="text-white/70">✦</span>
+          <div className="h-px w-12 bg-white/30" />
+        </motion.div>
         {/* Date */}
+        <motion.div variants={fadeUp}>
+          <p className="text-sm uppercase tracking-[0.35em] text-white/70">
+            Jumat
+          </p>
+
+          <p className="mt-2 font-serif text-2xl md:text-3xl text-white">
+            26 Juni 2026
+          </p>
+        </motion.div>
+        {/* Quote */}
         <motion.p
           variants={fadeUp}
-          className="mt-6 tracking-[0.35em] text-xs md:text-sm text-white/80"
+          className="mt-10 max-w-md text-sm md:text-base leading-relaxed text-white/75"
         >
-          2 MEI 2026
+          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+          pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram
+          kepadanya."
+        </motion.p>
+        <motion.p
+          variants={fadeUp}
+          className="mt-2 text-xs tracking-[0.25em] uppercase text-white/50"
+        >
+          QS. Ar-Rum : 21
         </motion.p>
       </motion.div>
     </section>

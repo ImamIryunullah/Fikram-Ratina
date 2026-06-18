@@ -4,64 +4,76 @@ import { FaEnvelopeOpenText } from "react-icons/fa";
 export default function Cover({ onOpen }) {
   return (
     <motion.section
-      className="fixed inset-0 z-50 flex items-center justify-center"
-      initial={{ y: 0 }}
-      animate={{ y: 0 }}
-      exit={{ y: "-100%" }}
-      transition={{ duration: 1.4, ease: "easeInOut" }}
+      className="fixed inset-0 z-50 bg-black"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/galeri/background.webp')",
-        }}
-      />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
-
-      {/* Content */}
-      <motion.div
-        className="relative z-10 text-center text-white px-6"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 1.2 }}
-      >
-        <p className="tracking-[0.3em] text-sm mb-6 uppercase">
-          50th Wedding Anniversary
-        </p>
-
-        <h1 className="font-serif text-4xl md:text-6xl mb-4">
-          Drs. Afan Christian <span className="mx-3">&</span> Meliana
-        </h1>
-
-        <p className="text-sm md:text-base tracking-widest mb-10">
-          Sabtu, 2 Mei 2026
-        </p>
-
-        {/* Button */}
-        <motion.button
-          onClick={onOpen}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="group inline-flex items-center gap-3 border border-white px-8 py-3 tracking-widest uppercase text-sm hover:bg-white hover:text-black transition"
+      <div className="flex h-full items-center justify-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="w-full max-w-md text-center"
         >
-          <FaEnvelopeOpenText className="text-lg transition group-hover:scale-110" />
-          Buka Undangan
-        </motion.button>
-      </motion.div>
+          {/* Arabic */}
+          <p className="text-lg text-white mb-8">
+            بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+          </p>
 
-      {/* Credit / Creator */}
-      <motion.div
-        className="absolute bottom-6 text-xs tracking-widest text-white/70"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-      >
-        Created with love by{" "}
-        <span className="font-semibold text-yellow-600">Jejak Momen</span>
-      </motion.div>
+          {/* Line */}
+          <div className="w-16 h-px bg-white/30 mx-auto mb-8" />
+
+          {/* Label */}
+          <p className="text-xs uppercase tracking-[0.35em] text-white/60 mb-10">
+            Undangan Pernikahan
+          </p>
+
+          {/* Names */}
+          <h1 className="font-serif text-5xl md:text-6xl text-white">Budi</h1>
+
+          <p className="my-4 text-white/70 text-xl">&</p>
+
+          <h1 className="font-serif text-5xl md:text-6xl text-white">Nabila</h1>
+
+          {/* Line */}
+          <div className="w-16 h-px bg-white/30 mx-auto my-10" />
+
+          {/* Date */}
+          <p className="text-sm uppercase tracking-[0.25em] text-white/60">
+            Jumat
+          </p>
+
+          <p className="mt-3 text-xl text-white">26 Juni 2026</p>
+
+          <p className="mt-2 text-sm text-white/60">Sape, Kabupaten Bima</p>
+
+          {/* Button */}
+          <button
+            onClick={onOpen}
+            className="
+              mt-12
+              inline-flex
+              items-center
+              gap-3
+              border
+              border-white/20
+              px-8
+              py-3
+              text-sm
+              uppercase
+              tracking-[0.2em]
+              text-white
+              hover:bg-white
+              hover:text-black
+              transition
+            "
+          >
+            <FaEnvelopeOpenText />
+            Buka Undangan
+          </button>
+        </motion.div>
+      </div>
     </motion.section>
   );
 }

@@ -4,92 +4,101 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.25,
-      delayChildren: 0.4,
+      staggerChildren: 0.2,
     },
   },
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.4,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-};
-
-const fadeScale = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1.6,
-      ease: [0.16, 1, 0.3, 1],
+      duration: 0.8,
     },
   },
 };
 
 export default function CoupleSection() {
   return (
-    <section className="relative py-12 px-6 overflow-hidden">
+    <section className="py-24 px-6">
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto"
+        className="max-w-6xl mx-auto"
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-120px" }}
+        viewport={{ once: true }}
       >
         {/* Heading */}
-        <motion.div variants={fadeUp} className="mb-32 text-center">
-          <p className="text-[11px] uppercase tracking-[0.6em] text-white/60 mb-6">
-            The Couple
+        <motion.div variants={fadeUp} className="text-center mb-20">
+          {" "}
+          <p className="uppercase tracking-[0.4em] text-xs text-white/60 mb-4">
+            Mempelai{" "}
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-white">
-            Drs. Afan Christian <span className="italic text-stone-300">&</span>{" "}
-            Meliana
+          ```
+          <h2 className="font-serif text-4xl md:text-5xl text-white">
+            Budi & Nabila
           </h2>
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <div className="h-px w-12 bg-white/20" />
+            <span className="text-white/60">✦</span>
+            <div className="h-px w-12 bg-white/20" />
+          </div>
         </motion.div>
 
-        {/* Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
-          {/* Left – Groom (Dominant Portrait) */}
-          <motion.div variants={fadeScale} className="md:col-span-7">
-            <div className="relative aspect-[3/4] overflow-hidden">
+        {/* Couple Grid */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          {/* Groom */}
+          <motion.div variants={fadeUp} className="text-center">
+            <div className="overflow-hidden rounded-t-[999px] rounded-b-[24px] mb-8">
               <img
-                src="/galeri/afan.webp"
-                alt="Afann"
-                className="w-full h-full object-cover"
+                src="/galeri/472ff3d6dbfb12a3a68fc470dbc88173.webp"
+                alt="Budi"
+                className="w-full aspect-[3/4] object-cover"
               />
             </div>
 
-            <motion.div variants={fadeUp} className="mt-10">
-              <h3 className="font-serif text-3xl md:text-4xl text-white">
-                Drs. Afan Christian
-              </h3>
-            </motion.div>
+            <h3 className="font-serif text-3xl md:text-4xl text-white mb-3">
+              Budi
+            </h3>
+
+            <p className="text-white/70 text-sm leading-7">
+              Putra Pertama dari
+              <br />
+              Bapak Ahmad & Ibu Siti
+            </p>
           </motion.div>
 
-          <motion.div variants={fadeScale} className="md:col-span-5">
-            <motion.div variants={fadeUp} className="mb-10 max-w-sm">
-              <h3 className="font-serif text-3xl md:text-4xl text-white">
-                Meliana
-              </h3>
-            </motion.div>
-
-            <div className="relative aspect-[2/3] overflow-hidden">
+          {/* Bride */}
+          <motion.div variants={fadeUp} className="text-center">
+            <div className="overflow-hidden rounded-t-[999px] rounded-b-[24px] mb-8">
               <img
-                src="/galeri/meliana.webp"
-                alt="Meliana"
-                className="w-full h-full object-cover"
+                src="/galeri/ec7fb18ee2a6b5082595b67995fb013a.webp"
+                alt="Nabila"
+                className="w-full aspect-[3/4] object-cover"
               />
             </div>
+
+            <h3 className="font-serif text-3xl md:text-4xl text-white mb-3">
+              Nabila
+            </h3>
+
+            <p className="text-white/70 text-sm leading-7">
+              Putri Pertama dari
+              <br />
+              Bapak Hidayat & Ibu Rahma
+            </p>
           </motion.div>
         </div>
+
+        {/* Closing */}
+        <motion.div variants={fadeUp} className="text-center mt-20">
+          <p className="text-white/70 max-w-xl mx-auto leading-8">
+            Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud
+            menyelenggarakan acara pernikahan putra-putri kami.
+          </p>
+        </motion.div>
       </motion.div>
     </section>
   );
