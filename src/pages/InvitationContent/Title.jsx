@@ -5,27 +5,28 @@ export default function HeroSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.4,
+        staggerChildren: 0.15, // Dipercepat sedikit agar transisi terasa lebih responsif
+        delayChildren: 0.2,
       },
     },
   };
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 16 }, // Mengurangi lonjakan y agar layout terasa lebih rapat saat memuat
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
+        duration: 0.8,
       },
     },
   };
 
   return (
-    <section className="relative min-h-screen px-6 py-12">
+    // min-h-[90vh] diubah menjadi py-12 (layar kecil) dan py-20 (layar besar) agar pas memeluk konten
+    <section className="relative px-6 py-12 md:py-20 flex items-center justify-center">
       <motion.div
-        className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center text-center"
+        className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center text-center"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -33,72 +34,71 @@ export default function HeroSection() {
         {/* Arabic */}
         <motion.p
           variants={fadeUp}
-          className="mb-4 text-lg md:text-xl text-white"
+          className="mb-3 text-base md:text-xl text-white"
         >
           بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
         </motion.p>
-        ```
+
         {/* Subtitle */}
         <motion.p
           variants={fadeUp}
-          className="mb-10 text-[11px] md:text-xs uppercase tracking-[0.45em] text-white/70"
+          className="mb-4 md:mb-6 text-[10px] md:text-xs uppercase tracking-[0.45em] text-white/70"
         >
           Undangan Pernikahan
         </motion.p>
-        {/* Photo */}
+
+        {/* Names (Ratina & Fikram) */}
+        <motion.div variants={fadeUp} className="space-y-1 md:space-y-2">
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-none">
+            Ratina
+          </h1>
+
+          <div className="text-lg md:text-2xl text-white/70">&</div>
+
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-none">
+            Fikram{" "}
+            <span className="text-white/70 text-xl md:text-4xl">(Qa)</span>
+          </h1>
+        </motion.div>
+
+        {/* Divider */}
         <motion.div
           variants={fadeUp}
-          className="relative mb-10 w-[240px] md:w-[320px] aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-[32px]"
+          className="my-4 md:my-6 flex items-center gap-4"
         >
-          <img
-            src="/galeri/eb78eea9bf8c8e055c59ca249628bf69.webp"
-            alt="Budi & Nabila"
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
-        {/* Names */}
-        <motion.div variants={fadeUp}>
-          <h1 className="font-serif text-5xl md:text-7xl text-white leading-none">
-            Budi
-          </h1>
-
-          <div className="my-3 text-2xl md:text-3xl text-white/80">&</div>
-
-          <h1 className="font-serif text-5xl md:text-7xl text-white leading-none">
-            Nabila
-          </h1>
-        </motion.div>
-        {/* Divider */}
-        <motion.div variants={fadeUp} className="my-8 flex items-center gap-4">
           <div className="h-px w-12 bg-white/30" />
-          <span className="text-white/70">✦</span>
+          <span className="text-white/70 text-sm">✦</span>
           <div className="h-px w-12 bg-white/30" />
         </motion.div>
-        {/* Date */}
-        <motion.div variants={fadeUp}>
-          <p className="text-sm uppercase tracking-[0.35em] text-white/70">
-            Jumat
-          </p>
 
-          <p className="mt-2 font-serif text-2xl md:text-3xl text-white">
-            26 Juni 2026
-          </p>
+        {/* Dua Rangkaian Acara (Akad & Resepsi) */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12 text-center"
+        >
+          {/* Info Akad */}
+          <div>
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-amber-400/80 font-medium">
+              Akad Nikah
+            </p>
+            <p className="mt-0.5 font-serif text-base md:text-xl text-white">
+              Sabtu, 04 Juli 2026
+            </p>
+          </div>
+
+          {/* Pembatas Kecil (Hanya muncul di layar sm ke atas) */}
+          <div className="hidden sm:block h-8 w-px bg-white/20" />
+
+          {/* Info Resepsi */}
+          <div>
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-amber-400/80 font-medium">
+              Resepsi
+            </p>
+            <p className="mt-0.5 font-serif text-base md:text-xl text-white">
+              Minggu, 05 Juli 2026
+            </p>
+          </div>
         </motion.div>
-        {/* Quote */}
-        <motion.p
-          variants={fadeUp}
-          className="mt-10 max-w-md text-sm md:text-base leading-relaxed text-white/75"
-        >
-          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
-          pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram
-          kepadanya."
-        </motion.p>
-        <motion.p
-          variants={fadeUp}
-          className="mt-2 text-xs tracking-[0.25em] uppercase text-white/50"
-        >
-          QS. Ar-Rum : 21
-        </motion.p>
       </motion.div>
     </section>
   );

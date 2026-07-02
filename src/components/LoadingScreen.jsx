@@ -46,7 +46,7 @@ export default function Cover({ onOpen }) {
           text-white
         "
           >
-            Budi
+            Fikram
           </h1>
 
           <div
@@ -70,20 +70,8 @@ export default function Cover({ onOpen }) {
           text-white
         "
           >
-            Nabila
+            Ratina
           </h1>
-
-          <p
-            className="
-          mt-6
-          text-sm
-          md:text-base
-          tracking-[0.2em]
-          text-white
-        "
-          >
-            Jumat, 26 Juni 2026
-          </p>
 
           <motion.button
             onClick={onOpen}

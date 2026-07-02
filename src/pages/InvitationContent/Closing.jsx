@@ -25,12 +25,11 @@ export default function ClosingSection() {
           variants={fadeUp}
           className="flex items-center justify-center gap-4 mb-12"
         >
-          {" "}
-          <div className="h-px w-12 bg-white/20" />{" "}
-          <span className="text-white/60">✦</span>{" "}
+          <div className="h-px w-12 bg-white/20" />
+          <span className="text-white/60">✦</span>
           <div className="h-px w-12 bg-white/20" />
         </motion.div>
-        ```
+
         {/* Heading */}
         <motion.p
           variants={fadeUp}
@@ -38,6 +37,7 @@ export default function ClosingSection() {
         >
           Terima Kasih
         </motion.p>
+
         {/* Message */}
         <motion.p
           variants={fadeUp}
@@ -50,25 +50,32 @@ export default function ClosingSection() {
           <br />
           Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
         </motion.p>
+
         {/* Salam */}
         <motion.p variants={fadeUp} className="mt-12 text-white/80 italic">
           Wassalamu'alaikum Warahmatullahi Wabarakatuh
         </motion.p>
-        {/* Names */}
+
+        {/* Names (Ratina & Fikram) */}
         <motion.div variants={fadeUp} className="mt-16">
-          <h3 className="font-serif text-4xl md:text-5xl text-white">Budi</h3>
+          <h3 className="font-serif text-4xl md:text-5xl text-white">Ratina</h3>
 
           <p className="my-4 text-xl text-white/60">&</p>
 
-          <h3 className="font-serif text-4xl md:text-5xl text-white">Nabila</h3>
+          <h3 className="font-serif text-4xl md:text-5xl text-white">
+            Fikram{" "}
+            <span className="text-white/60 text-2xl md:text-3xl">(Qa)</span>
+          </h3>
         </motion.div>
-        {/* Footer */}
+
+        {/* Footer info updated */}
         <motion.p
           variants={fadeUp}
           className="mt-12 text-xs uppercase tracking-[0.3em] text-white/40"
         >
-          26 Juni 2026 • Sape, Kabupaten Bima
+          5 Juli 2026 • Lambu, Kabupaten Bima
         </motion.p>
+
         {/* Bottom Ornament */}
         <motion.div
           variants={fadeUp}

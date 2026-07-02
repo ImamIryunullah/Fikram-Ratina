@@ -33,12 +33,10 @@ const AudioPlayer = () => {
         bg-black/40 backdrop-blur-md border border-white/10
         hover:border-[#d6c28f]/50 transition-all duration-500 shadow-2xl"
       >
-        {/* ICON */}
         <div className="text-[#d6c28f]">
           {isPlaying ? <FaMusic /> : <FaPause />}
         </div>
 
-        {/* SONG TITLE */}
         <div className="w-28 overflow-hidden hidden md:block">
           <p
             className={`text-[11px] tracking-widest uppercase whitespace-nowrap
@@ -46,7 +44,7 @@ const AudioPlayer = () => {
               isPlaying ? "opacity-60" : "opacity-30"
             } animate-marquee`}
           >
-            Pernikahan
+            Fikram & Ratina
           </p>
         </div>
 
