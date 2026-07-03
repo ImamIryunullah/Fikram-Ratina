@@ -110,9 +110,6 @@ export default function EventSection() {
             </div>
 
             <div className="border-t border-white/10 pt-4 mt-4">
-              <p className="font-serif text-base text-white mb-1">
-                Kediaman Mempelai
-              </p>
               <p className="text-[11px] md:text-xs text-white/60 leading-relaxed uppercase tracking-wider">
                 Jalan Pantai Lariti <br />
                 RT. 06 RW. 03 Desa Soro, Kec. Lambu
@@ -148,9 +145,6 @@ export default function EventSection() {
             </div>
 
             <div className="border-t border-white/10 pt-4 mt-4">
-              <p className="font-serif text-base text-white mb-1">
-                Kediaman Mempelai
-              </p>
               <p className="text-[11px] md:text-xs text-white/60 leading-relaxed uppercase tracking-wider">
                 Jalan Pantai Lariti <br />
                 RT. 06 RW. 03 Desa Soro, Kec. Lambu
