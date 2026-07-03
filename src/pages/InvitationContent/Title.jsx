@@ -5,14 +5,14 @@ export default function HeroSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15, // Dipercepat sedikit agar transisi terasa lebih responsif
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
   };
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 16 }, // Mengurangi lonjakan y agar layout terasa lebih rapat saat memuat
+    hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,
       y: 0,
@@ -23,7 +23,6 @@ export default function HeroSection() {
   };
 
   return (
-    // min-h-[90vh] diubah menjadi py-12 (layar kecil) dan py-20 (layar besar) agar pas memeluk konten
     <section className="relative px-6 py-12 md:py-20 flex items-center justify-center">
       <motion.div
         className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center text-center"
@@ -71,30 +70,43 @@ export default function HeroSection() {
           <div className="h-px w-12 bg-white/30" />
         </motion.div>
 
-        {/* Dua Rangkaian Acara (Akad & Resepsi) */}
+        {/* Tiga Rangkaian Acara (Akad, Kapanca, & Resepsi) */}
         <motion.div
           variants={fadeUp}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12 text-center"
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-12 text-center"
         >
           {/* Info Akad */}
           <div>
             <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-amber-400/80 font-medium">
               Akad Nikah
             </p>
-            <p className="mt-0.5 font-serif text-base md:text-xl text-white">
+            <p className="mt-0.5 font-serif text-base md:text-lg lg:text-xl text-white whitespace-nowrap">
               Sabtu, 04 Juli 2026
             </p>
           </div>
 
-          {/* Pembatas Kecil (Hanya muncul di layar sm ke atas) */}
-          <div className="hidden sm:block h-8 w-px bg-white/20" />
+          {/* Pembatas 1 */}
+          <div className="hidden md:block h-8 w-px bg-white/20" />
+
+          {/* Info Kapanca */}
+          <div>
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-amber-400/80 font-medium">
+              Acara Kapanca
+            </p>
+            <p className="mt-0.5 font-serif text-base md:text-lg lg:text-xl text-white whitespace-nowrap">
+              Sabtu, 04 Juli 2026
+            </p>
+          </div>
+
+          {/* Pembatas 2 */}
+          <div className="hidden md:block h-8 w-px bg-white/20" />
 
           {/* Info Resepsi */}
           <div>
             <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-amber-400/80 font-medium">
               Resepsi
             </p>
-            <p className="mt-0.5 font-serif text-base md:text-xl text-white">
+            <p className="mt-0.5 font-serif text-base md:text-lg lg:text-xl text-white whitespace-nowrap">
               Minggu, 05 Juli 2026
             </p>
           </div>
